@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://bronzecraft.github.io</id>
     <title>Gridea</title>
-    <updated>2021-01-07T14:06:37.083Z</updated>
+    <updated>2021-01-07T14:06:45.063Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://bronzecraft.github.io"/>
     <link rel="self" href="https://bronzecraft.github.io/atom.xml"/>
@@ -17,15 +17,6 @@
         </link>
         <updated>2021-01-07T13:42:39.000Z</updated>
         <content type="html"><![CDATA[<p>再次测试一下是否成功</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Test]]></title>
-        <id>https://bronzecraft.github.io/post/IPjgWARHO/</id>
-        <link href="https://bronzecraft.github.io/post/IPjgWARHO/">
-        </link>
-        <updated>2021-01-06T14:55:30.000Z</updated>
-        <content type="html"><![CDATA[<p>This is a quick test</p>
 ]]></content>
     </entry>
 </feed>
