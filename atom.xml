@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://bronzecraft.github.io</id>
     <title>迷藏</title>
-    <updated>2021-01-14T14:48:50.922Z</updated>
+    <updated>2021-01-14T14:53:32.568Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://bronzecraft.github.io"/>
     <link rel="self" href="https://bronzecraft.github.io/atom.xml"/>
@@ -16,8 +16,8 @@
         <link href="https://bronzecraft.github.io/post/kxBbXLIIs/">
         </link>
         <updated>2021-01-14T14:40:03.000Z</updated>
-        <content type="html"><![CDATA[<p>本站是一个记录本人随思随想的小角落，嗯....(<sub>即便是身处果壳之中也自以为是宇宙之王，并不是</sub>)<br>
-本人只是一个保安(<sub>宇宙尽头的餐馆门口的保安，也太中二了</sub>)<br>
+        <content type="html"><![CDATA[<p>本站是一个记录本人随思随想的小角落，嗯....<s>（即便是身处果壳之中也自以为是宇宙之王，并不是）</s><br>
+本人只是一个保安 <s>（宇宙尽头的餐馆门口的保安，也太中二了）</s><br>
 本人喜欢科幻，历史，机械，编程，徒步，骑行...兴趣较多然而并没有什么深入且擅长的。</p>
 ]]></content>
     </entry>
