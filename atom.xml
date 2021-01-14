@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://bronzecraft.github.io</id>
     <title>迷藏</title>
-    <updated>2021-01-14T13:51:12.736Z</updated>
+    <updated>2021-01-14T14:15:39.410Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://bronzecraft.github.io"/>
     <link rel="self" href="https://bronzecraft.github.io/atom.xml"/>
@@ -11,21 +11,13 @@
     <icon>https://bronzecraft.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 迷藏</rights>
     <entry>
-        <title type="html"><![CDATA[This is second test]]></title>
-        <id>https://bronzecraft.github.io/post/9PirqYh5a/</id>
-        <link href="https://bronzecraft.github.io/post/9PirqYh5a/">
+        <title type="html"><![CDATA[Hello world]]></title>
+        <id>https://bronzecraft.github.io/post/R6szcXDYA/</id>
+        <link href="https://bronzecraft.github.io/post/R6szcXDYA/">
         </link>
-        <updated>2021-01-14T12:37:49.000Z</updated>
-        <content type="html"><![CDATA[<p>继续测试是否能发布博客</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[测试]]></title>
-        <id>https://bronzecraft.github.io/post/jqUkkDSPj/</id>
-        <link href="https://bronzecraft.github.io/post/jqUkkDSPj/">
-        </link>
-        <updated>2021-01-07T13:42:39.000Z</updated>
-        <content type="html"><![CDATA[<p>再次测试一下是否成功</p>
+        <updated>2021-01-14T14:11:56.000Z</updated>
+        <content type="html"><![CDATA[<p>折腾了许久，终于将Gridea和Github同步成功不更新的问题解决了。<br>
+记录开始！</p>
 ]]></content>
     </entry>
 </feed>
