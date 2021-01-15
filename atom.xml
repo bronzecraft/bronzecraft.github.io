@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://bronzecraft.github.io</id>
     <title>迷藏</title>
-    <updated>2021-01-15T13:10:48.604Z</updated>
+    <updated>2021-01-15T13:25:43.502Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://bronzecraft.github.io"/>
     <link rel="self" href="https://bronzecraft.github.io/atom.xml"/>
@@ -22,12 +22,16 @@
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[科幻谜思]]></title>
+        <title type="html"><![CDATA[热寂脑洞]]></title>
         <id>https://bronzecraft.github.io/post/eKrKUSyd0/</id>
         <link href="https://bronzecraft.github.io/post/eKrKUSyd0/">
         </link>
         <updated>2021-01-14T14:29:45.000Z</updated>
-        <content type="html"><![CDATA[<p>玻尔兹曼大脑+热寂</p>
+        <content type="html"><![CDATA[<p>这是很久以前就有的脑洞，宇宙或许早就进入了热寂。涨落无处不在，而我们刚好在一个低熵的宇宙洼地，随着时间流逝迎来最后的消亡。<br>
+而后又有更进一步脑洞，假定宇宙中有无数的低熵洼地，终归有生命能在熵回升前逃离洼地。<br>
+一艘载着流亡者的帆船航行在熵之海上，不停的寻找洼地延续自身，旅途中会遇到各种各样的生命和种群。<br>
+再进一步，或许有更多的洼地在消亡前发展到能简单对抗熵回升的趋势，它们派出探索飞船，去探索，去转移，去搜集资源。<br>
+再再进一步，有一艘飞船或者洼地认为这样苟延残喘没有意义，决议牺牲自己，点燃宇宙，让熵海沸腾，最后创造一个新宇宙，继而希望宇宙能诞生出永存的生命。</p>
 ]]></content>
     </entry>
     <entry>
