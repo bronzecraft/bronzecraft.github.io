@@ -2,19 +2,24 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>热寂脑洞 | 迷藏</title>
+<title>Nastran Dmap学习笔记（1） | 迷藏</title>
 <link rel="shortcut icon" href="https://bronzecraft.github.io/favicon.ico?v=1611059292038">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://bronzecraft.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="热寂脑洞 | 迷藏 - Atom Feed" href="https://bronzecraft.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="Nastran Dmap学习笔记（1） | 迷藏 - Atom Feed" href="https://bronzecraft.github.io/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="这是很久以前就有的脑洞，宇宙或许早就进入了热寂。涨落无处不在，而我们刚好在一个低熵的宇宙洼地，随着时间流逝迎来最后的消亡。
-而后又有更进一步脑洞，假定宇宙中有无数的低熵洼地，终归有生命能在熵回升前逃离洼地。
-一艘载着流亡者的帆船航行在熵之海..." />
-    <meta name="keywords" content="科幻谜思" />
+    <meta name="description" content="一个小例子：
+       sol hw
+       compile hw
+       subdmap hw
+       message //' hello world '$
+       end
+       cend
+      ..." />
+    <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
@@ -76,29 +81,31 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              热寂脑洞
+              Nastran Dmap学习笔记（1）
             </h2>
             <div class="post-info">
               <span>
-                2021-01-14
+                2021-01-19
               </span>
               <span>
                 1 min read
               </span>
               
-                <a href="https://bronzecraft.github.io/tag/38cC2SAo5/" class="post-tag">
-                  # 科幻谜思
-                </a>
-              
             </div>
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>这是很久以前就有的脑洞，宇宙或许早就进入了热寂。涨落无处不在，而我们刚好在一个低熵的宇宙洼地，随着时间流逝迎来最后的消亡。<br>
-而后又有更进一步脑洞，假定宇宙中有无数的低熵洼地，终归有生命能在熵回升前逃离洼地。<br>
-一艘载着流亡者的帆船航行在熵之海上，不停的寻找洼地延续自身，旅途中会遇到各种各样的生命和种群。<br>
-再进一步，或许有更多的洼地在消亡前发展到能简单对抗熵回升的趋势，它们派出探索飞船，去探索，去转移，去搜集资源。<br>
-再再进一步，有一艘飞船或者洼地认为这样苟延残喘没有意义，决议牺牲自己，点燃宇宙，让熵海沸腾，最后创造一个新宇宙，继而希望宇宙能诞生出永存的生命。</p>
+                <p>一个小例子：</p>
+<pre><code>       sol hw
+       compile hw
+       subdmap hw
+       message //' hello world '$
+       end
+       cend
+       begin bulk
+       enddata
+</code></pre>
+<p>.f06文件里可以看到输出&quot;HELLO WORLD &quot;</p>
 
               </div>
               <div class="toc-container">
@@ -111,9 +118,9 @@
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://bronzecraft.github.io/post/R6szcXDYA/">
+            <a href="https://bronzecraft.github.io/post/2soV52Ss7/">
               <h3 class="post-title">
-                Hello world
+                MSC.Marc求解器简单比较
               </h3>
             </a>
           </div>
