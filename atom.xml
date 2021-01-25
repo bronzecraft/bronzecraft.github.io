@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://bronzecraft.github.io</id>
     <title>迷藏</title>
-    <updated>2021-01-24T14:04:17.730Z</updated>
+    <updated>2021-01-25T13:00:04.702Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://bronzecraft.github.io"/>
     <link rel="self" href="https://bronzecraft.github.io/atom.xml"/>
@@ -10,6 +10,21 @@
     <logo>https://bronzecraft.github.io/images/avatar.png</logo>
     <icon>https://bronzecraft.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 迷藏</rights>
+    <entry>
+        <title type="html"><![CDATA[无题]]></title>
+        <id>https://bronzecraft.github.io/post/O-4HYtF7e/</id>
+        <link href="https://bronzecraft.github.io/post/O-4HYtF7e/">
+        </link>
+        <updated>2021-01-25T12:33:50.000Z</updated>
+        <content type="html"><![CDATA[<p>  惯于长夜过春时，挈妇将雏鬓有丝。<br>
+  忍看朋辈成新鬼，怒向刀丛觅小诗。<br>
+  梦里依稀慈母泪，城头变幻大王旗。<br>
+  吟罢低眉无处写，月光如水照缁衣。</p>
+<p>  记得之前在网上看过一段文字，说工具发明的年代判定差别几十年是常有的事，假使几百年后有人写下“今早鲁迅起来，略觉胸闷，拿出手机看到一条新信息：先生，柔石他们遇难了....<br>
+晚上鲁迅打开电脑敲下：忍看朋辈成新鬼，怒向刀丛觅小诗”这样的文章也不足为奇。<br>
+  哎，深觉有趣，不知百年后别人如何描述我们这个时代，又不知我们描述的百年前时代究竟是什么模样啊。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hypermesh自定义显示角度]]></title>
         <id>https://bronzecraft.github.io/post/Pvc8vn5tc/</id>
