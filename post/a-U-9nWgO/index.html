@@ -2,18 +2,23 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>关于 | 迷藏</title>
+<title>Tkinter库学习笔记（1） | 迷藏</title>
 <link rel="shortcut icon" href="https://bronzecraft.github.io/favicon.ico?v=1612091667651">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://bronzecraft.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="关于 | 迷藏 - Atom Feed" href="https://bronzecraft.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="Tkinter库学习笔记（1） | 迷藏 - Atom Feed" href="https://bronzecraft.github.io/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="本站是一个记录本人随思随想的小角落，嗯....（即便是身处果壳之中也自以为是宇宙之王，并不是）
-本人只是一个保安 （宇宙尽头的餐馆门口的保安，也太中二了）
-本人喜欢科幻，历史，机械，编程，徒步，骑行...兴趣较多然而并没有什么深入且擅长的。..." />
+    <meta name="description" content="  周末简单看了下Tkinter库的帮助文档，写了一个小程序，记录鼠标点击按钮的次数，代码如下：
+import tkinter as tk
+
+top = tk.Tk()
+n = 0
+def ph():
+    global n
+    n ..." />
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -76,11 +81,11 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              关于
+              Tkinter库学习笔记（1）
             </h2>
             <div class="post-info">
               <span>
-                2021-01-14
+                2021-01-31
               </span>
               <span>
                 1 min read
@@ -90,9 +95,23 @@
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>本站是一个记录本人随思随想的小角落，嗯....<s>（即便是身处果壳之中也自以为是宇宙之王，并不是）</s><br>
-本人只是一个保安 <s>（宇宙尽头的餐馆门口的保安，也太中二了）</s><br>
-本人喜欢科幻，历史，机械，编程，徒步，骑行...兴趣较多然而并没有什么深入且擅长的。</p>
+                <p>  周末简单看了下Tkinter库的帮助文档，写了一个小程序，记录鼠标点击按钮的次数，代码如下：</p>
+<pre><code>import tkinter as tk
+
+top = tk.Tk()
+n = 0
+def ph():
+    global n
+    n = n + 1
+    lab.configure(text =str(n) )
+    return 0
+butn =tk.Button(top,text = &quot;click&quot;,command=ph)
+lab = tk.Label(top,text = str(n))
+lab.pack()
+butn.pack()
+top.mainloop()
+</code></pre>
+<p>  原打算使用bind方法实现的，不过暂时没搞懂bind的用法，一直失败。</p>
 
               </div>
               <div class="toc-container">
@@ -105,9 +124,9 @@
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://bronzecraft.github.io/post/eKrKUSyd0/">
+            <a href="https://bronzecraft.github.io/post/O-4HYtF7e/">
               <h3 class="post-title">
-                热寂脑洞
+                无题
               </h3>
             </a>
           </div>
