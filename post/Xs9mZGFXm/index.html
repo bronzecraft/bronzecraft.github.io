@@ -2,24 +2,26 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Hypermesh自定义显示角度 | 迷藏</title>
+<title>python实现多线程写入和读出 | 迷藏</title>
 <link rel="shortcut icon" href="https://bronzecraft.github.io/favicon.ico?v=1612620899204">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://bronzecraft.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="Hypermesh自定义显示角度 | 迷藏 - Atom Feed" href="https://bronzecraft.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="python实现多线程写入和读出 | 迷藏 - Atom Feed" href="https://bronzecraft.github.io/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="  鉴于hypermesh中的齐次旋转矩阵太难定义，本文采用旋转命令进行调整视图角度。
-  大约分三步：
+    <meta name="description" content="   一个简单例子。代码如下：
+# -*- coding: utf-8 -*-
 
-定义屏幕坐标系；
-定义选取面的法向坐标系；
-旋转选取面的法向线使之与屏幕法线旋转重合。
+import threading
+import time
+import queue
+import os
+import subprocess
 
-  由于本人对hypermesh tcl命..." />
-    <meta name="keywords" content="有限元" />
+class sh..." />
+    <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
@@ -81,90 +83,102 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              Hypermesh自定义显示角度
+              python实现多线程写入和读出
             </h2>
             <div class="post-info">
               <span>
-                2021-01-24
+                2021-02-06
               </span>
               <span>
-                3 min read
+                2 min read
               </span>
-              
-                <a href="https://bronzecraft.github.io/tag/lb6u5AG0e/" class="post-tag">
-                  # 有限元
-                </a>
               
             </div>
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>  鉴于hypermesh中的齐次旋转矩阵太难定义，本文采用旋转命令进行调整视图角度。<br>
-  大约分三步：</p>
-<ol>
-<li>定义屏幕坐标系；</li>
-<li>定义选取面的法向坐标系；</li>
-<li>旋转选取面的法向线使之与屏幕法线旋转重合。</li>
-</ol>
-<p>  由于本人对hypermesh tcl命令不是很熟，所以采用了一个绕圈的方法，实际上hypermesh提供了矢量叉乘功能 。<s>（然而本人太懒不想去搞明白它的用法）</s></p>
-<pre><code>#vector cross product function
-proc cdot {v1 v2} {
-	foreach {x1 y1 z1} [lindex $v1] {}
-	foreach {x2 y2 z2} [lindex $v2] {}
-	set x3 [expr $y1*$z2 - $z1*$y2];
-	set y3 [expr $z1*$x2 - $x1*$z2];
-	set z3 [expr $x1*$y2 - $y1*$x2];
-	set xyz [expr sqrt($x3*$x3+$y3*$y3+$z3*$z3)]
-	return &quot;[expr $x3/$xyz] [expr $y3/$xyz] [expr $z3/$xyz] &quot;;
-	}
-#vector inner product function
-proc dot {v1 v2} {
-	foreach {x1 y1 z1} [lindex $v1] {}
-	foreach {x2 y2 z2} [lindex $v2] {}
-	set x [expr $x1*$x2+$y1*$y2+$z1*$z2]
-	return $x
-	}
-#vector length function
-proc absvect {v1} {
-	foreach {x1 y1 z1} [lindex $v1] {}
-	set t [expr sqrt($x1*$x1+$y1*$y1+$z1*$z1)]
-	return $t
-	}
-# roate the view by using default  point
-proc roate_xyz { plane } {
-	set pi [expr asin(1)*2]	
-	set vect_3 [lindex [lindex $plane 0] 0]
-	foreach {x1 y1 z1} [lindex [lindex $plane 0] 1] {}
-	set vect_scrn_normal [hm_getscreenvector normal]
-	set vect_scrn_parllel [hm_getscreenvector parallel]
-	set vect_scrn_z [cdot $vect_scrn_normal $vect_scrn_parllel]
-	set th_1 [expr acos([dot $vect_3 $vect_scrn_parllel]/[absvect $vect_3]/[absvect $vect_scrn_parllel])]
-	catch {unset$vx}
-	for {set i 0} {$i&lt;=2} {incr i} {
-		set x [expr [lindex $vect_3 $i] - [lindex $vect_scrn_parllel $i]/[absvect $vect_scrn_parllel]*[absvect $vect_3]*(cos($th_1))]
-		lappend vx $x
-		}
-	set th_2 [expr acos([dot $vx $vect_scrn_normal]/[absvect $vx]/[absvect $vect_scrn_normal])]
-	set th1_gr [expr $th_1/$pi*180 - 90]
-	set th2_gr [expr $th_2/$pi*180]
+                <p>   一个简单例子。代码如下：</p>
+<pre><code># -*- coding: utf-8 -*-
 
-	set th_3 [expr acos([dot $vect_3 $vect_scrn_z]/[absvect $vect_3]/[absvect $vect_scrn_z])]
+import threading
+import time
+import queue
+import os
+import subprocess
 
-	if { $th_3&gt;[expr $pi/2] } {
-		*rotateabout 1 $x1 $y1 $z1
-		*rotate 0 -$th2_gr;
-		*rotate 90 $th1_gr;
-		} else {
-		*rotateabout 1 $x1 $y1 $z1
-		*rotate 0 $th2_gr;
-		*rotate 90 $th1_gr;
-		}
-	}
-# ###################################################################	
-set plane [hm_getplanepanel &quot;Please define a plane&quot;]
-if {[llength [lindex [lindex $plane 0] 0]]} {
-	roate_xyz $plane
-}
+class sharefunc:
+    '''
+    shared function
+    '''
+    def __init__(self,initial_value=0):
+        # self.value = intial_value
+        self.data=initial_value
+        self._value_lock = threading.Lock()
+        self.tasklist = []
+    
+    def taskin(self,data):
+        for i in range(data):
+            with self._value_lock:
+                self.tasklist.append(i)
+            time.sleep(1)
+    
+    def taskini(self,data):
+        for i in range(data):
+            with self._value_lock:
+                self.tasklist.append(i+20)
+            time.sleep(0.5)
+     
+        
+     
+        
+    def taskout(self):
+        with self._value_lock:
+            f = open(&quot;run.bat&quot;,&quot;w&quot;)
+            x = self.tasklist[0]
+            del self.tasklist[0]
+            print ('out number:',x)
+            print ('lenth oflist is :',len(self.tasklist))
+            # f.write('del *.txt' +&quot;\n&quot;)
+            f.write(&quot;ping -n 1 www.bing.com &gt; &quot;+str(x)+&quot;.txt&quot; +&quot;\n&quot;)
+            f.write(&quot;ping -n &quot;+str(x)+&quot; www.bing.com &gt;&gt; &quot;+str(x)+&quot;.txt&quot;+&quot;\n&quot;)           
+            f.close()
+        # print(&quot;1ok&quot;)
+        os.system(&quot;run.bat&quot;)
+        # print(&quot;2ok&quot;)
+        return x
+test=[]
+t = sharefunc()
+t.taskin(2)
+# print(t.tasklist[0])
+# x = t.taskout()
+# print(x)
+print(len(t.tasklist))
+t1 = threading.Thread(target=t.taskin,args=(9,))
+t1.start()
+t3 = threading.Thread(target=t.taskini,args=(9,))
+t3.start()
+
+# t1.join()
+# for i in range(10):
+#     print(t1.is_alive())
+#     if (not t1.is_alive()):
+#         t1 = threading.Thread(target=t.taskin,args=(i+2,))
+#         t1.start()
+#         print(&quot;t1: &quot;,i)
+
+tx = 1
+# for i in t.tasklist:
+#     print (i)
+while (tx==1):
+    # print(&quot;t.taskin thread is &quot;,t1.is_alive())
+    if (len(t.tasklist)&gt;0):
+        t2 = threading.Thread(target=t.taskout,args=())
+        t2.start()
+        t2.join()
+    if (not t1.is_alive()) and (len(t.tasklist)&lt;1) and(not t1.is_alive()):
+        break
+        
+
 </code></pre>
 
               </div>
@@ -178,9 +192,9 @@ if {[llength [lindex [lindex $plane 0] 0]]} {
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://bronzecraft.github.io/post/pO8G2S8TD/">
+            <a href="https://bronzecraft.github.io/post/qt-aecOEz/">
               <h3 class="post-title">
-                Nastran Dmap学习笔记（1）
+                关于太空漫游四部曲
               </h3>
             </a>
           </div>
