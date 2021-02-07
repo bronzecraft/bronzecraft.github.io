@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://bronzecraft.github.io</id>
     <title>迷藏</title>
-    <updated>2021-02-06T14:15:08.425Z</updated>
+    <updated>2021-02-07T13:53:56.796Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://bronzecraft.github.io"/>
     <link rel="self" href="https://bronzecraft.github.io/atom.xml"/>
@@ -10,6 +10,18 @@
     <logo>https://bronzecraft.github.io/images/avatar.png</logo>
     <icon>https://bronzecraft.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 迷藏</rights>
+    <entry>
+        <title type="html"><![CDATA[窗前随笔]]></title>
+        <id>https://bronzecraft.github.io/post/si14YgKRg/</id>
+        <link href="https://bronzecraft.github.io/post/si14YgKRg/">
+        </link>
+        <updated>2021-02-07T13:33:45.000Z</updated>
+        <content type="html"><![CDATA[<p>  闲坐时收到一条系统短信，说明日降温注意保暖云云。想着前面与家里通话我说无锡今日很热而我妈说家里很冷，笑着说明日无锡开始降温，大抵是老家的冷空气跑到我这里了。看到这条短信又引发了一些回忆。<br>
+  高中读书时学过一篇课文，余秋雨的《听听那冷雨》，里面提到作者客居台湾，已经二十余年未曾踏上大陆，在寒潮掠过大陆涌向台湾时感叹不能扑进她怀里，被她的裙边扫下也算是安慰孺慕之情。<br>
+  今年疫情严重，各地政策变动不定，这个春节是确定回不去老家了。这还是这么大第一次在外地过春节，这几日颇有感触。虽说年味越来越淡，但春节团圆的象征意义依旧在，无法回去陪父母致使心情很是失落。今日被这条系统短信又一次勾起难言之情。我自然不像余先生这般多年未回家，但依然稍微体会到余先生的这种借气候变化抚慰内心思乡之情的心态。<br>
+  故乡啊！</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[python实现多线程写入和读出]]></title>
         <id>https://bronzecraft.github.io/post/Xs9mZGFXm/</id>
@@ -383,16 +395,6 @@ if {[llength [lindex [lindex $plane 0] 0]]} {
 一艘载着流亡者的帆船航行在熵之海上，不停的寻找洼地延续自身，旅途中会遇到各种各样的生命和种群。<br>
 再进一步，或许有更多的洼地在消亡前发展到能简单对抗熵回升的趋势，它们派出探索飞船，去探索，去转移，去搜集资源。<br>
 再再进一步，有一艘飞船或者洼地认为这样苟延残喘没有意义，决议牺牲自己，点燃宇宙，让熵海沸腾，最后创造一个新宇宙，继而希望宇宙能诞生出永存的生命。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hello world]]></title>
-        <id>https://bronzecraft.github.io/post/R6szcXDYA/</id>
-        <link href="https://bronzecraft.github.io/post/R6szcXDYA/">
-        </link>
-        <updated>2021-01-14T14:11:56.000Z</updated>
-        <content type="html"><![CDATA[<p>折腾了许久，终于将Gridea和Github同步成功不更新的问题解决了。<br>
-记录开始！</p>
 ]]></content>
     </entry>
 </feed>
