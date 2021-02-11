@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://bronzecraft.github.io</id>
     <title>迷藏</title>
-    <updated>2021-02-07T13:55:30.037Z</updated>
+    <updated>2021-02-11T16:03:14.270Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://bronzecraft.github.io"/>
     <link rel="self" href="https://bronzecraft.github.io/atom.xml"/>
@@ -10,6 +10,20 @@
     <logo>https://bronzecraft.github.io/images/avatar.png</logo>
     <icon>https://bronzecraft.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 迷藏</rights>
+    <entry>
+        <title type="html"><![CDATA[春节假期随笔（一）]]></title>
+        <id>https://bronzecraft.github.io/post/ZVy9CJA76/</id>
+        <link href="https://bronzecraft.github.io/post/ZVy9CJA76/">
+        </link>
+        <updated>2021-02-11T15:23:31.000Z</updated>
+        <content type="html"><![CDATA[<p>  今天是春节法定假日第一天，也是年三十，未能回家，内心赶不走的内疚。<br>
+  晚上看了一部老电影，《落叶归根》，颇有感触。电影很好看，赵本山奉献了影帝级别的表演。故事据说是导演根据一位农民工的真实经历改编而成的，想起以前看的《山河故人》，贾樟柯也将一段真实情节化用进了自己的电影——一名僧人在太原火车站候车室超度突然去世的老人。<img src="https://bronzecraft.github.io/post-images/1613057514201.jpg" alt="" loading="lazy"><br>
+  《落叶归根》的故事给人一种无奈而又坚持的感觉。抱着完成诺言的朴素想法坚持把工友的尸体送回老家，路上遇到了劫匪、小偷、黑店，被各种欺负，也遇到了情伤的卡车司机、独身一人的老人、正规发廊的打工妹、野外游荡的蜂农。被骗被欺负，也有被帮助，男主角最终把工友送到了老家，然而只剩下一片废墟 ——工友一家可能已经因为三峡水库蓄水搬到别的地方去了。“爸爸我们知道错了，我们找了你很久，我们搬家了，新家在湖北xxxx”，这段留言背后又有怎样的故事啊，令人唏嘘。<br>
+  《山河故人》则给我另一种感受，电影像是一个记录者单纯记录时间的推进时代的变迁，女主成婚，离婚，而又老去。我没办法详细表达自己内心的感受。倪匡的卫斯理系列有一个故事是一对可以在时间中旅行的情侣拍摄了历史中曾经发生过的事——一名哥老会打手的人生，他的成长、努力和失败，然后把这段纪录片寄给了卫斯理。《山河故人》就给我这样的感觉，导演好像是单纯从历史中摘取了这样一个人的人生并把它展示出来。顺便说一句，影片中的《go west》插曲也曾被用在另一部电影《有话好好说》，一部喜剧，赵本山在里面出演了一个小角色——收废品的。拿着姜文给的喇叭喊出了那段经典台词：安红俺想你。<br>
+  晚上从同学那边回来，看到小区里一名父亲在放小小的烟花，母亲抱着孩子在旁边观看，蛮温馨。想起过去在老家过年，那时还没有禁放烟花炮竹，小孩子们吃完晚饭到处放炮仗，这样的情景以后大抵是见不到了。<br>
+  就这样吧，外边的炮声也响起来了，新年了！</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[窗前随笔]]></title>
         <id>https://bronzecraft.github.io/post/si14YgKRg/</id>
@@ -382,19 +396,6 @@ if {[llength [lindex [lindex $plane 0] 0]]} {
         <content type="html"><![CDATA[<p>本站是一个记录本人随思随想的小角落，嗯....<s>（即便是身处果壳之中也自以为是宇宙之王，并不是）</s><br>
 本人只是一个保安 <s>（宇宙尽头的餐馆门口的保安，也太中二了）</s><br>
 本人喜欢科幻，历史，机械，编程，徒步，骑行...兴趣较多然而并没有什么深入且擅长的。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[热寂脑洞]]></title>
-        <id>https://bronzecraft.github.io/post/eKrKUSyd0/</id>
-        <link href="https://bronzecraft.github.io/post/eKrKUSyd0/">
-        </link>
-        <updated>2021-01-14T14:29:45.000Z</updated>
-        <content type="html"><![CDATA[<p>这是很久以前就有的脑洞，宇宙或许早就进入了热寂。涨落无处不在，而我们刚好在一个低熵的宇宙洼地，随着时间流逝迎来最后的消亡。<br>
-而后又有更进一步脑洞，假定宇宙中有无数的低熵洼地，终归有生命能在熵回升前逃离洼地。<br>
-一艘载着流亡者的帆船航行在熵之海上，不停的寻找洼地延续自身，旅途中会遇到各种各样的生命和种群。<br>
-再进一步，或许有更多的洼地在消亡前发展到能简单对抗熵回升的趋势，它们派出探索飞船，去探索，去转移，去搜集资源。<br>
-再再进一步，有一艘飞船或者洼地认为这样苟延残喘没有意义，决议牺牲自己，点燃宇宙，让熵海沸腾，最后创造一个新宇宙，继而希望宇宙能诞生出永存的生命。</p>
 ]]></content>
     </entry>
 </feed>
