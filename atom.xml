@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://bronzecraft.github.io</id>
     <title>迷藏</title>
-    <updated>2021-03-07T04:46:43.307Z</updated>
+    <updated>2021-03-07T06:24:47.380Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://bronzecraft.github.io"/>
     <link rel="self" href="https://bronzecraft.github.io/atom.xml"/>
@@ -10,6 +10,57 @@
     <logo>https://bronzecraft.github.io/images/avatar.png</logo>
     <icon>https://bronzecraft.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 迷藏</rights>
+    <entry>
+        <title type="html"><![CDATA[psutil库杀死派生进程]]></title>
+        <id>https://bronzecraft.github.io/post/CA0ob1nL4/</id>
+        <link href="https://bronzecraft.github.io/post/CA0ob1nL4/">
+        </link>
+        <updated>2021-03-07T05:12:54.000Z</updated>
+        <content type="html"><![CDATA[<p>  研究了下python的psutil库，发现里面提供了一个杀死进程树的方法，记录下：</p>
+<pre><code>import os
+import signal
+import psutil
+
+def kill_proc_tree(pid, sig=signal.SIGTERM, include_parent=True,
+                   timeout=None, on_terminate=None):
+    &quot;&quot;&quot;Kill a process tree (including grandchildren) with signal
+    &quot;sig&quot; and return a (gone, still_alive) tuple.
+    &quot;on_terminate&quot;, if specified, is a callback function which is
+    called as soon as a child terminates.
+    &quot;&quot;&quot;
+    assert pid != os.getpid(), &quot;won't kill myself&quot;
+    parent = psutil.Process(pid)
+    children = parent.children(recursive=True)
+    if include_parent:
+        children.append(parent)
+    for p in children:
+        try:
+            p.send_signal(sig)
+        except psutil.NoSuchProcess:
+            pass
+    gone, alive = psutil.wait_procs(children, timeout=timeout,
+                                    callback=on_terminate)
+    return (gone, alive)
+    
+</code></pre>
+<p>  顺便记录下psutil库windows系统下的常用命令：<br>
+<strong>psutil.cpu_percent(interval=None, percpu=False)</strong>: 获取某进程在某段时间的cpu使用率，返回值为浮点数。<br>
+<strong>psutil.cpu_times(percpu=False)</strong> ：获取cpu消耗的时间，返回值为tuple。user：用户模式下的时间。system：内核模式下的时间。idle：杂项时间。interrupt：硬件中断维护花费的时间。dpc： time spent servicing deferred procedure calls (DPCs); DPCs are interrupts that run at a lower priority than standard interrupts.（此处未看懂）。<br>
+<strong>psutil.cpu_times_percent(interval=None, percpu=False)</strong>: 和**psutil.cpu_times(percpu=False)**一样，只不过采用百分比形式展示结果。<br>
+<strong>psutil.cpu_count(logical=True)</strong>：获取系统cpu的逻辑核数。logical=False即获取cpu的物理核数。<br>
+<strong>psutil.cpu_stats()</strong>：返回cpu的各项数据。<br>
+<strong>psutil.cpu_freq(percpu=False)</strong>：返回cpu的频率，包括当前频率，最小和最大频率。单位为MHz。<br>
+<strong>psutil.getloadavg()</strong>：返回最近1、5、15分钟内的系统负载。<br>
+<strong>psutil.pids()</strong>：返回当前运行的进程的pid。<br>
+<strong>psutil.pid_exists(pid)</strong>：检查给定pid的进程是否存在。<br>
+<strong>psutil.wait_procs(procs, timeout=None, callback=None)</strong>：Return a (gone, alive) tuple indicating which processes are gone and which ones are still alive。（此处未看懂）<br>
+以下为pustil库中记录的异常：<br>
+<strong>psutil.Error</strong>：基础异常对象，其他异常均继承自此异常。<br>
+<strong>psutil.NoSuchProcess(pid, name=None, msg=None)</strong>：找不到给定pid的进程时引发的异常。<br>
+<strong>psutil.AccessDenied(pid=None, name=None, msg=None)</strong>：由权限不足引发的异常。<br>
+<strong>psutil.TimeoutExpired(seconds, pid=None, name=None, msg=None)</strong>：进程超时引发的异常。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[正月随笔（一）]]></title>
         <id>https://bronzecraft.github.io/post/d5bvrYE3I/</id>
@@ -283,123 +334,6 @@ if {[llength [lindex [lindex $plane 0] 0]]} {
        enddata
 </code></pre>
 <p>.f06文件里可以看到输出&quot;HELLO WORLD &quot;</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[MSC.Marc求解器简单比较]]></title>
-        <id>https://bronzecraft.github.io/post/2soV52Ss7/</id>
-        <link href="https://bronzecraft.github.io/post/2soV52Ss7/">
-        </link>
-        <updated>2021-01-18T13:07:09.000Z</updated>
-        <content type="html"><![CDATA[<p>  对Marc求解器算例验证最全的应该是自带帮助文档Vol E的2.79，不过那是基于linear analysis。本文试着拿非线性接触问题简单比较下Marc的求解器，验证一些想法。<br>
-  本示例开启了Stress Assembly and Recovery并行和Matrix solver并行，模型中1024个壳单元，240个实体单元。<br>
-  采用Multifrontal Sparse Solver，求解过程中最大内存使用为184M。求解时间信息如下：</p>
-<pre><code>         timing information:                             wall time      cpu time
-
-           total time for input:                              0.10          0.09
-           total time for stiffness matrix assembly:         43.65         86.67
-           total time for mass matrix assembly:               0.00          0.00
-           total time for stress recovery:                   16.02         31.81
-           total time for matrix solution:                   41.01         82.44
-           total time for contact:                            0.45          0.72
-           total time for output:                             0.23          0.53
-           total time for miscellaneous:                     14.96          9.73
-           ---------------------------------------------------------------------
-           total time:                                      116.42        212.00
-
-
-         multi-threading overheads:                      wall time      cpu time
-
-           total time for multi-threading:                    0.27          0.22
-           (note that this time is also counted
-            in other sections)
-</code></pre>
-<p>  下面是相同模型相同并行设置，采用Pardiso Direct Sparse Solver，求解过程最大使用内存为196M。花费的时间信息如下：</p>
-<pre><code>         timing information:                             wall time      cpu time
-
-           total time for input:                              0.09          0.08
-           total time for stiffness matrix assembly:         42.18         84.34
-           total time for mass matrix assembly:               0.00          0.00
-           total time for stress recovery:                   15.87         31.92
-           total time for matrix solution:                   53.81        104.97
-           total time for contact:                            0.42          1.16
-           total time for output:                             0.32          0.62
-           total time for miscellaneous:                     18.94         10.91
-           ---------------------------------------------------------------------
-           total time:                                      131.64        234.00
-
-
-         multi-threading overheads:                      wall time      cpu time
-
-           total time for multi-threading:                    0.25          0.62
-           (note that this time is also counted
-            in other sections)
-</code></pre>
-<p>  相同模型更改为Mumps direct solver，求解过程中最大使用内存为188M，求解时间信息如下：</p>
-<pre><code>              timing information:                             wall time      cpu time
-
-           total time for input:                              0.09          0.09
-           total time for stiffness matrix assembly:         41.42         81.44
-           total time for mass matrix assembly:               0.00          0.00
-           total time for stress recovery:                   15.71         31.41
-           total time for matrix solution:                   41.92         83.59
-           total time for contact:                            0.43          0.91
-           total time for output:                             0.29          0.64
-           total time for miscellaneous:                     13.47          9.58
-           ---------------------------------------------------------------------
-           total time:                                      113.33        207.66
-
-
-         multi-threading overheads:                      wall time      cpu time
-
-           total time for multi-threading:                    0.23          0.64
-           (note that this time is also counted
-            in other sections)
-</code></pre>
-<p>  更改成CASI Iterative solver再试算下，最大使用内存为256M，*（不科学，迭代求解器怎么会比直接求解器内存耗费更大，回头我再检查下模型）*求解时间信息如下：</p>
-<pre><code>            [本示例中因个人电脑原因最后卡住一段时间导致杂项时间过多，实际应用时间约236.72s]
-            timing information:                             wall time      cpu time
-
-           total time for input:                              0.09          0.09
-           total time for stiffness matrix assembly:         43.57         87.00
-           total time for mass matrix assembly:               0.00          0.00
-           total time for stress recovery:                   16.32         32.23
-           total time for matrix solution:                  168.21        286.58
-           total time for contact:                            0.46          0.91
-           total time for output:                             0.30          0.59
-           total time for miscellaneous:                    157.01         10.33
-           ---------------------------------------------------------------------
-           total time:                                      385.95        417.73
-
-
-         multi-threading overheads:                      wall time      cpu time
-
-           total time for multi-threading:                    0.25          0.34
-           (note that this time is also counted
-            in other sections)
-</code></pre>
-<p>  最后采用Multifrontal Sparse Solver，同样设置，只不过Matrix fil Optimization更改为internal，即采用软件自己的矩阵带宽优化功能，最大使用内存为182M。*（我以为Metis会优化带宽减少内存使用量来着）*时间信息如下：（杂项时间过多原因同上）</p>
-<pre><code>         timing information:                             wall time      cpu time
-
-           total time for input:                              0.09          0.08
-           total time for stiffness matrix assembly:         43.41         86.58
-           total time for mass matrix assembly:               0.00          0.00
-           total time for stress recovery:                   16.63         33.53
-           total time for matrix solution:                   37.38         72.73
-           total time for contact:                            0.47          1.12
-           total time for output:                             0.28          0.30
-           total time for miscellaneous:                    156.75         11.03
-           ---------------------------------------------------------------------
-           total time:                                      255.01        205.38
-
-
-         multi-threading overheads:                      wall time      cpu time
-
-           total time for multi-threading:                    0.23          0.30
-           (note that this time is also counted
-            in other sections)
-</code></pre>
-<p>  哪天有空开DDM再试算下。</p>
 ]]></content>
     </entry>
 </feed>
