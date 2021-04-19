@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://bronzecraft.github.io</id>
     <title>迷藏</title>
-    <updated>2021-03-27T03:41:35.639Z</updated>
+    <updated>2021-04-19T15:45:09.274Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://bronzecraft.github.io"/>
     <link rel="self" href="https://bronzecraft.github.io/atom.xml"/>
@@ -10,6 +10,40 @@
     <logo>https://bronzecraft.github.io/images/avatar.png</logo>
     <icon>https://bronzecraft.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 迷藏</rights>
+    <entry>
+        <title type="html"><![CDATA[test]]></title>
+        <id>https://bronzecraft.github.io/post/UGutOYW1M/</id>
+        <link href="https://bronzecraft.github.io/post/UGutOYW1M/">
+        </link>
+        <updated>2021-04-19T15:44:45.000Z</updated>
+        <content type="html"><![CDATA[<p>def task_move(self,rpath,tpath):<br>
+# while self.n &gt; 0:<br>
+tasklist_singal = self.singal_search('.lck', tpath)<br>
+n_list = len(tasklist_singal)<br>
+t_line=[]<br>
+for i in range(n_list):<br>
+file = tasklist_singal[i][1].replace(&quot;.lck&quot;,&quot;.json&quot;)<br>
+file_path = os.path.join(tasklist_singal[i][0],file)<br>
+file_lck = os.path.join(tasklist_singal[i][0],tasklist_singal[i][1])<br>
+print (file_path)<br>
+with open(file_path) as f:<br>
+task = json.load(f)<br>
+task_line=[task['job name'],task['account'],task['charge number'],task['solver'],task[&quot;job file&quot;]]<br>
+t_line.append(task_line)<br>
+if not os.path.exists(task['account']):<br>
+os.makedirs(task['account'])<br>
+if not os.path.exists(task['account']+&quot;/&quot;+task['job name']):<br>
+os.makedirs(task['account']+&quot;/&quot;+task['job name'])<br>
+tgp = os.path.join(path,task['account'])<br>
+tfgp = os.path.join(tgp,task['job name'])<br>
+# if os.path.exists(task['account'])<br>
+jobfile = os.path.join(tasklist_singal[i][0],task[&quot;job file&quot;])<br>
+shutil.move(jobfile,tfgp)<br>
+os.remove(file_lck)<br>
+for i in t_line:<br>
+print(i)</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[psutil库杀死派生进程]]></title>
         <id>https://bronzecraft.github.io/post/CA0ob1nL4/</id>
@@ -315,25 +349,6 @@ if {[llength [lindex [lindex $plane 0] 0]]} {
 	roate_xyz $plane
 }
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Nastran Dmap学习笔记（1）]]></title>
-        <id>https://bronzecraft.github.io/post/pO8G2S8TD/</id>
-        <link href="https://bronzecraft.github.io/post/pO8G2S8TD/">
-        </link>
-        <updated>2021-01-19T11:53:08.000Z</updated>
-        <content type="html"><![CDATA[<p>一个小例子：</p>
-<pre><code>       sol hw
-       compile hw
-       subdmap hw
-       message //' hello world '$
-       end
-       cend
-       begin bulk
-       enddata
-</code></pre>
-<p>.f06文件里可以看到输出&quot;HELLO WORLD &quot;</p>
 ]]></content>
     </entry>
 </feed>
