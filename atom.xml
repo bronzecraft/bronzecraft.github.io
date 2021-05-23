@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://bronzecraft.github.io</id>
     <title>迷藏</title>
-    <updated>2021-05-23T14:52:52.847Z</updated>
+    <updated>2021-05-23T15:45:41.614Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://bronzecraft.github.io"/>
     <link rel="self" href="https://bronzecraft.github.io/atom.xml"/>
@@ -10,6 +10,64 @@
     <logo>https://bronzecraft.github.io/images/avatar.png</logo>
     <icon>https://bronzecraft.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 迷藏</rights>
+    <entry>
+        <title type="html"><![CDATA[FlowChart with Markdown]]></title>
+        <id>https://bronzecraft.github.io/post/wod9cC9gH/</id>
+        <link href="https://bronzecraft.github.io/post/wod9cC9gH/">
+        </link>
+        <updated>2021-05-23T14:52:56.000Z</updated>
+        <content type="html"><![CDATA[<p>   This a flowchart write with markdown Mermaid:</p>
+<pre><code>graph TD
+    A1[Monitor] --&gt; B1{Singal Recieved} --&gt;|Yes|C1{Singnal procesing}
+    --&gt; D1{Monitor task}
+    style D1 fill:#f9f
+    style E1 fill:#f96
+    
+    C1 --&gt; E1[Cancell task]
+    B1--&gt;|No|A1
+    D1 --&gt;F1[Return Result]
+    E1 --&gt;F1
+    F1 --&gt;A1
+
+
+    A2[Monitor] --&gt;B2{Singal Recieved} --&gt;|Yes|C2{Read json file}
+     --&gt;|Yes|D2{Transfer file} --&gt;|Yes|E2[Generate task ]
+     --&gt;F2[/Generate task waiting list/]
+     style F2 fill:#f96
+     style E2 fill:#f9f
+
+    B2--&gt;|No|A2
+    C2 --&gt;|No|G2[Return error] --&gt;A2
+    D2 --&gt;|No|G2
+    G2--&gt; A2
+    F2 --&gt;A2
+
+    A3[Monitor ] --&gt; B3{Task waiting list Reieved} --&gt; |Yes|C3[Recieved Taks]
+    --&gt;D3[Generate Task Run bat] --&gt; E3{singnal} 
+    --&gt;|Yes|F3[exec command] --&gt;E3
+    style B3 fill:#f96
+    F3 --&gt;G3{Task Status} --&gt;|No|E3
+    G3 --&gt;|Yes|H3[Return Result] --&gt;A3
+    B3--&gt;|No|I3{Time check} --&gt;|Yes|J3[Send Email]
+    I3--&gt;|No|A3
+    J3 --&gt;A3
+    E3 --&gt;|No|G3
+
+    A4{Time Statue} --&gt;|Yes|B4[Recieved Folder list]  --&gt;C4{File time statue Check}
+    --&gt;|Yes|D4[File Delete] --&gt;E4[/Return Reslt/]
+    C4 --&gt;|No|A4
+    A4 --&gt;|No|A4
+    E4 --&gt;A4
+
+    A4{Time Statue} --&gt;|Yes: Case1|B4[Recieved Folder list] --&gt;C4{File time statue Check}
+    --&gt;|Yes|D4[File Delete] --&gt;E4[/Return Reslt/]
+    C4 --&gt;|No|A4
+    A4 --&gt;|No|A4
+    E4 --&gt;A4
+    A4 --&gt;|Yes: Case2|F4{Storage Space Check} --&gt;|Yes|G4[Send Email] --&gt;A4
+    F4--&gt;|No| A4</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[psutil库杀死派生进程]]></title>
         <id>https://bronzecraft.github.io/post/CA0ob1nL4/</id>
@@ -315,25 +373,6 @@ if {[llength [lindex [lindex $plane 0] 0]]} {
 	roate_xyz $plane
 }
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Nastran Dmap学习笔记（1）]]></title>
-        <id>https://bronzecraft.github.io/post/pO8G2S8TD/</id>
-        <link href="https://bronzecraft.github.io/post/pO8G2S8TD/">
-        </link>
-        <updated>2021-01-19T11:53:08.000Z</updated>
-        <content type="html"><![CDATA[<p>一个小例子：</p>
-<pre><code>       sol hw
-       compile hw
-       subdmap hw
-       message //' hello world '$
-       end
-       cend
-       begin bulk
-       enddata
-</code></pre>
-<p>.f06文件里可以看到输出&quot;HELLO WORLD &quot;</p>
 ]]></content>
     </entry>
 </feed>

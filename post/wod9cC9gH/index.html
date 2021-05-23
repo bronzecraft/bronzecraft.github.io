@@ -2,19 +2,19 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Hello world | 迷藏</title>
+<title>FlowChart with Markdown | 迷藏</title>
 <link rel="shortcut icon" href="https://bronzecraft.github.io/favicon.ico?v=1621784736500">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://bronzecraft.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="Hello world | 迷藏 - Atom Feed" href="https://bronzecraft.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="FlowChart with Markdown | 迷藏 - Atom Feed" href="https://bronzecraft.github.io/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="折腾了许久，终于将Gridea和Github同步成功不更新的问题解决了。
-记录开始！
-" />
-    <meta name="keywords" content="个人随笔" />
+    <meta name="description" content="   This a flowchart write with markdown Mermaid:
+graph TD
+    A1[Monitor] --&gt; B1{Singal Recieved} --&gt;|Yes|C1{Singn..." />
+    <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
@@ -76,26 +76,70 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              Hello world
+              FlowChart with Markdown
             </h2>
             <div class="post-info">
               <span>
-                2021-01-14
+                2021-05-23
               </span>
               <span>
-                1 min read
+                2 min read
               </span>
-              
-                <a href="https://bronzecraft.github.io/tag/0D3V2L-To/" class="post-tag">
-                  # 个人随笔
-                </a>
               
             </div>
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>折腾了许久，终于将Gridea和Github同步成功不更新的问题解决了。<br>
-记录开始！</p>
+                <p>   This a flowchart write with markdown Mermaid:</p>
+<pre><code>graph TD
+    A1[Monitor] --&gt; B1{Singal Recieved} --&gt;|Yes|C1{Singnal procesing}
+    --&gt; D1{Monitor task}
+    style D1 fill:#f9f
+    style E1 fill:#f96
+    
+    C1 --&gt; E1[Cancell task]
+    B1--&gt;|No|A1
+    D1 --&gt;F1[Return Result]
+    E1 --&gt;F1
+    F1 --&gt;A1
+
+
+    A2[Monitor] --&gt;B2{Singal Recieved} --&gt;|Yes|C2{Read json file}
+     --&gt;|Yes|D2{Transfer file} --&gt;|Yes|E2[Generate task ]
+     --&gt;F2[/Generate task waiting list/]
+     style F2 fill:#f96
+     style E2 fill:#f9f
+
+    B2--&gt;|No|A2
+    C2 --&gt;|No|G2[Return error] --&gt;A2
+    D2 --&gt;|No|G2
+    G2--&gt; A2
+    F2 --&gt;A2
+
+    A3[Monitor ] --&gt; B3{Task waiting list Reieved} --&gt; |Yes|C3[Recieved Taks]
+    --&gt;D3[Generate Task Run bat] --&gt; E3{singnal} 
+    --&gt;|Yes|F3[exec command] --&gt;E3
+    style B3 fill:#f96
+    F3 --&gt;G3{Task Status} --&gt;|No|E3
+    G3 --&gt;|Yes|H3[Return Result] --&gt;A3
+    B3--&gt;|No|I3{Time check} --&gt;|Yes|J3[Send Email]
+    I3--&gt;|No|A3
+    J3 --&gt;A3
+    E3 --&gt;|No|G3
+
+    A4{Time Statue} --&gt;|Yes|B4[Recieved Folder list]  --&gt;C4{File time statue Check}
+    --&gt;|Yes|D4[File Delete] --&gt;E4[/Return Reslt/]
+    C4 --&gt;|No|A4
+    A4 --&gt;|No|A4
+    E4 --&gt;A4
+
+    A4{Time Statue} --&gt;|Yes: Case1|B4[Recieved Folder list] --&gt;C4{File time statue Check}
+    --&gt;|Yes|D4[File Delete] --&gt;E4[/Return Reslt/]
+    C4 --&gt;|No|A4
+    A4 --&gt;|No|A4
+    E4 --&gt;A4
+    A4 --&gt;|Yes: Case2|F4{Storage Space Check} --&gt;|Yes|G4[Send Email] --&gt;A4
+    F4--&gt;|No| A4</code></pre>
 
               </div>
               <div class="toc-container">
@@ -105,6 +149,15 @@
           </article>
         </div>
 
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://bronzecraft.github.io/post/CA0ob1nL4/">
+              <h3 class="post-title">
+                psutil库杀死派生进程
+              </h3>
+            </a>
+          </div>
         
 
         
