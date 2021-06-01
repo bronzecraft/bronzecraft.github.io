@@ -2,21 +2,18 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>psutil库杀死派生进程 | 迷藏</title>
+<title>FEM example using Smath | 迷藏</title>
 <link rel="shortcut icon" href="https://bronzecraft.github.io/favicon.ico?v=1622561303729">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://bronzecraft.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="psutil库杀死派生进程 | 迷藏 - Atom Feed" href="https://bronzecraft.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="FEM example using Smath | 迷藏 - Atom Feed" href="https://bronzecraft.github.io/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="  研究了下python的psutil库，发现里面提供了一个杀死进程树的方法，记录下：
-import os
-import signal
-import psutil
+    <meta name="description" content="一个小例子，计算二阶四边形单元应力：
 
-def kill_proc_tree(pid, sig=signal.SI..." />
+..." />
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -79,63 +76,22 @@ def kill_proc_tree(pid, sig=signal.SI..." />
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              psutil库杀死派生进程
+              FEM example using Smath
             </h2>
             <div class="post-info">
               <span>
-                2021-03-07
+                2021-06-01
               </span>
               <span>
-                3 min read
+                1 min read
               </span>
               
             </div>
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>  研究了下python的psutil库，发现里面提供了一个杀死进程树的方法，记录下：</p>
-<pre><code>import os
-import signal
-import psutil
-
-def kill_proc_tree(pid, sig=signal.SIGTERM, include_parent=True,
-                   timeout=None, on_terminate=None):
-    &quot;&quot;&quot;Kill a process tree (including grandchildren) with signal
-    &quot;sig&quot; and return a (gone, still_alive) tuple.
-    &quot;on_terminate&quot;, if specified, is a callback function which is
-    called as soon as a child terminates.
-    &quot;&quot;&quot;
-    assert pid != os.getpid(), &quot;won't kill myself&quot;
-    parent = psutil.Process(pid)
-    children = parent.children(recursive=True)
-    if include_parent:
-        children.append(parent)
-    for p in children:
-        try:
-            p.send_signal(sig)
-        except psutil.NoSuchProcess:
-            pass
-    gone, alive = psutil.wait_procs(children, timeout=timeout,
-                                    callback=on_terminate)
-    return (gone, alive)
-    
-</code></pre>
-<p>  顺便记录下psutil库windows系统下的常用命令：<br>
-<strong>psutil.cpu_percent(interval=None, percpu=False)</strong>: 获取某进程在某段时间的cpu使用率，返回值为浮点数。<br>
-<strong>psutil.cpu_times(percpu=False)</strong> ：获取cpu消耗的时间，返回值为tuple。user：用户模式下的时间。system：内核模式下的时间。idle：杂项时间。interrupt：硬件中断维护花费的时间。dpc： time spent servicing deferred procedure calls (DPCs); DPCs are interrupts that run at a lower priority than standard interrupts.（此处未看懂）。<br>
-<strong>psutil.cpu_times_percent(interval=None, percpu=False)</strong>: 和**psutil.cpu_times(percpu=False)**一样，只不过采用百分比形式展示结果。<br>
-<strong>psutil.cpu_count(logical=True)</strong>：获取系统cpu的逻辑核数。logical=False即获取cpu的物理核数。<br>
-<strong>psutil.cpu_stats()</strong>：返回cpu的各项数据。<br>
-<strong>psutil.cpu_freq(percpu=False)</strong>：返回cpu的频率，包括当前频率，最小和最大频率。单位为MHz。<br>
-<strong>psutil.getloadavg()</strong>：返回最近1、5、15分钟内的系统负载。<br>
-<strong>psutil.pids()</strong>：返回当前运行的进程的pid。<br>
-<strong>psutil.pid_exists(pid)</strong>：检查给定pid的进程是否存在。<br>
-<strong>psutil.wait_procs(procs, timeout=None, callback=None)</strong>：Return a (gone, alive) tuple indicating which processes are gone and which ones are still alive。（此处未看懂）<br>
-以下为pustil库中记录的异常：<br>
-<strong>psutil.Error</strong>：基础异常对象，其他异常均继承自此异常。<br>
-<strong>psutil.NoSuchProcess(pid, name=None, msg=None)</strong>：找不到给定pid的进程时引发的异常。<br>
-<strong>psutil.AccessDenied(pid=None, name=None, msg=None)</strong>：由权限不足引发的异常。<br>
-<strong>psutil.TimeoutExpired(seconds, pid=None, name=None, msg=None)</strong>：进程超时引发的异常。</p>
+                <p>一个小例子，计算二阶四边形单元应力：<br>
+<img src="https://bronzecraft.github.io/post-images/1622561234228.png" alt="" loading="lazy"></p>
 
               </div>
               <div class="toc-container">
@@ -148,9 +104,9 @@ def kill_proc_tree(pid, sig=signal.SIGTERM, include_parent=True,
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://bronzecraft.github.io/post/d5bvrYE3I/">
+            <a href="https://bronzecraft.github.io/post/wod9cC9gH/">
               <h3 class="post-title">
-                正月随笔（一）
+                FlowChart with Markdown
               </h3>
             </a>
           </div>
