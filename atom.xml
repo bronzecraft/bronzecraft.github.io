@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://bronzecraft.github.io</id>
     <title>迷藏</title>
-    <updated>2021-07-11T15:38:46.318Z</updated>
+    <updated>2021-07-11T15:40:11.825Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://bronzecraft.github.io"/>
     <link rel="self" href="https://bronzecraft.github.io/atom.xml"/>
@@ -16,7 +16,8 @@
         <link href="https://bronzecraft.github.io/post/UgShPNMjG/">
         </link>
         <updated>2021-07-11T15:37:28.000Z</updated>
-        <content type="html"><![CDATA[<pre><code>#from abaqus import *
+        <content type="html"><![CDATA[<p>本脚本目前仅适用于提取集中力，不支持弯矩的提取，暂时没搞懂弯矩是怎么计算出来的</p>
+<pre><code>#from abaqus import *
 from abaqusConstants import *
 from odbAccess import *
 #from viewerModules import *

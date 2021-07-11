@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>abaqus提取Freebody下集中力的脚本 | 迷藏</title>
-<link rel="shortcut icon" href="https://bronzecraft.github.io/favicon.ico?v=1626017923026">
+<link rel="shortcut icon" href="https://bronzecraft.github.io/favicon.ico?v=1626017996212">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://bronzecraft.github.io/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="abaqus提取Freebody下集中力的脚本 | 迷藏 - Atom Feed" href="https://bronzecraft.github.io/atom.xml">
@@ -11,11 +11,11 @@
 
 
 
-    <meta name="description" content="#from abaqus import *
+    <meta name="description" content="本脚本目前仅适用于提取集中力，不支持弯矩的提取，暂时没搞懂弯矩是怎么计算出来的
+#from abaqus import *
 from abaqusConstants import *
 from odbAccess import *
-#from viewerModules import *
-odb = openOdb(p..." />
+#fro..." />
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -25,7 +25,7 @@ odb = openOdb(p..." />
       <div class="main-content">
         <div class="site-header">
   <a href="https://bronzecraft.github.io">
-  <img class="avatar" src="https://bronzecraft.github.io/images/avatar.png?v=1626017923026" alt="">
+  <img class="avatar" src="https://bronzecraft.github.io/images/avatar.png?v=1626017996212" alt="">
   </a>
   <h1 class="site-title">
     迷藏
@@ -92,7 +92,8 @@ odb = openOdb(p..." />
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <pre><code>#from abaqus import *
+                <p>本脚本目前仅适用于提取集中力，不支持弯矩的提取，暂时没搞懂弯矩是怎么计算出来的</p>
+<pre><code>#from abaqus import *
 from abaqusConstants import *
 from odbAccess import *
 #from viewerModules import *
